@@ -6,9 +6,17 @@
 </head>
 <body>
     <ul>
-        <li><a href="intro.html">About Me</a></li>
-        <li><a href="projects.html">My Projects</a></li>
+        <li><a onclick="changeContainer('intro.html')">About Me</a></li>
+        <li><a onclick="changeContainer('projects.html')">My Projects</a></li>
         <li><a href="mailto:testertestington940@gmail.com">Email Me!</a></li>
     </ul>
+    <iframe src="intro.html" id="container" allowTransparency="true" scrolling="no" frameborder="0" >
+    </iframe>
+    <script type="text/javascript">
+        function changeContainer(page)
+        {
+            document.getElementById("container").src=page;
+        }
+    </script>
 </body>
 </html>

@@ -12,7 +12,7 @@ ul
     margin: 0;
     padding: 0;
     overflow: hidden;
-    position: sticky;
+    position: fixed;
     left:50%;
     transform: translateX(-50%);
     top: 0;
@@ -38,4 +38,10 @@ li a
 li a:hover 
 {
     background-color: #1A6F73;
+}
+iframe
+{
+    position: relative;
+    margin-top: 60px; 
+    width: 100%;
 }
