@@ -12,7 +12,9 @@ ul
     margin: 0;
     padding: 0;
     overflow: hidden;
-    position: relative;
+    position: sticky;
+    left:50%;
+    transform: translateX(-50%);
     top: 0;
     display: inline-block;
     background-color: #378285;
