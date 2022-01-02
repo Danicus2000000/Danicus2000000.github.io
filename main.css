@@ -4,6 +4,7 @@ html
 {
     background-color: cadetblue;
     color: #000;
+    overflow-y: hidden;
 }
 
 ul 
@@ -44,7 +45,7 @@ iframe
     position: relative;
     margin-top: 60px; 
     width: 100%;
-    height: auto;
+    height: 100%;
     max-width: 400%;
     max-height: 1000%;
 }
