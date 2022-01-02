@@ -20,7 +20,7 @@
         }
         
         var content = document.getElementById("container");
-        content.onload = function()
+        content.onchange = function()
         {
           content.style.height = content.contentWindow.document.body.scrollHeight + 'px';
           content.style.width  = content.contentWindow.document.body.scrollWidth+'px';
