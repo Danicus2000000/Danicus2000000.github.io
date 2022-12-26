@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+    <title id="titlecontainer">Question 4</title>
+    <link rel="stylesheet" type="text/css" href="../css/christmas.css"/>
+    <link rel="icon" href="../img/christmas.ico"/>
+</head>
+<body>
+    <center>
+        <h1>You are on fire!</h1>
+        <h3>Question 4: What clothes did I wear when we went out to the humber bridge for the first time? (hint: it was cold out!)</h3>
+        <div>
+            <button onclick="wrongRedirect()">My fluffy green jacket</button>
+            <button onclick="wrongRedirect()">A long sleeved top</button>
+            <button onclick="wrongRedirect()">Nothing I went naked for the hell of it</button>
+            <button onclick="rightRedirect()">My stylish and as ever brilliant trench coat</button>
+        </div>
+    </center>
+    <script>
+        function wrongRedirect(){window.location.replace("wrongAnswer.html");}
+        function rightRedirect(){window.location.replace("question5.html");}
+    </script>
+</body>
+</html>
