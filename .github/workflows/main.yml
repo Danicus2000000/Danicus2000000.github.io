@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy gh-page Branch
 permissions:
   contents: write
 # Run workflow on every push to the master branch
@@ -21,8 +21,8 @@ jobs:
         dotnet-version: '8.x'
 
     # publishes Blazor project to the release-folder
-    - name: Publish .NET Core Project
-      run: dotnet publish PortfolioWebsite.csproj -c Release -o release --nologo
+    - name: Publish .NET Project
+      run: dotnet workload install wasm-tools; dotnet publish PortfolioWebsite.csproj -c Release -o release --nologo
     
     # changes the base-tag in index.html from '/' to 'danicus2000000.github.io' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to danicus2000000.github.io
