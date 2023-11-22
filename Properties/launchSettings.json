@@ -1,26 +1,38 @@
 {
+  "$schema": "http://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:36503",
-      "sslPort": 44393
+      "applicationUrl": "http://localhost:62924",
+      "sslPort": 44355
     }
   },
   "profiles": {
-    "IIS Express": {
-      "commandName": "IISExpress",
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
+      "applicationUrl": "http://localhost:5268",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "BlazorGitHubPagesDemo": {
+    "https": {
       "commandName": "Project",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
       "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "applicationUrl": "https://localhost:7117;http://localhost:5268",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
