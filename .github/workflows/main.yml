@@ -16,7 +16,7 @@ jobs:
       
     # sets up node
     - name: Setup node 3.x
-      uses: actions/setup-node@3.x
+      uses: actions/setup-node@v4
 
 
     # Installs required npm packages
