@@ -6,6 +6,9 @@ const Navbar = () => {
         <>
             <Nav>
                 <NavMenu>
+                    <div class="logo">
+                        <NavLink to="/"><img src="../logo192.png" alt="Home Icon"/></NavLink>
+                    </div>
                     <NavLink to="/" activeStyle>
                         Home
                     </NavLink>
