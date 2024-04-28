@@ -13,20 +13,21 @@ jobs:
     steps:
     # uses GitHub's checkout action to checkout code form the master branch
     - uses: actions/checkout@v4
-    
-    # sets up .NET Core SDK 3.1
-    - name: Setup dotnet 8.x
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.x'
+      
+    # sets up node
+    - name: Setup node 3.x
+      uses: actions/setup-node@3.x
 
-    # publishes Blazor project to the release-folder
-    - name: Publish .NET Project
-      run: dotnet workload install wasm-tools; dotnet publish PortfolioWebsite.csproj -c Release -o release --nologo
-    
-    # copy index.html to 404.html to serve the same file when a file is not found
-    - name: copy index.html to 404.html
-      run: cp release/wwwroot/index.html release/wwwroot/404.html
+
+    # Installs required npm packages
+    - name: Installs required npm dependencies
+      working-directory: ./my-website
+      run: npm install
+
+    # Generate npm build
+    - name: Generates npm build
+      working-directory: ./my-website
+      run: npm run build
 
     # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
     - name: Add .nojekyll file
