@@ -20,12 +20,10 @@ jobs:
 
     # Installs required npm packages
     - name: Installs required npm dependencies
-      working-directory: ./my-website
       run: npm install
 
     # Generate npm build
     - name: Generates npm build
-      working-directory: ./my-website
       run: npm run build
 
     # Commit to gh-pages branch
@@ -33,4 +31,4 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         BRANCH: gh-pages
-        FOLDER: my-website/build
+        FOLDER: build
