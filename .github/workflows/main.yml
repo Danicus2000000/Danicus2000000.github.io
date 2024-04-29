@@ -20,12 +20,10 @@ jobs:
 
     # Installs required npm packages
     - name: Installs required npm dependencies
-      working-directory: ./
       run: npm install
 
     # Generate npm build
     - name: Generates npm build
-      working-directory: ./
       run: npm run build
 
     # Commit to gh-pages branch
