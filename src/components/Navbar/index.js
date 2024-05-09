@@ -7,7 +7,7 @@ const Navbar = () => {
             <Nav>
                 <NavMenu>
                     <div class="logo">
-                        <NavLink to="/"><img src="../logo192.png" alt="Home Icon"/></NavLink>
+                        <NavLink to="/"><img src="../logo192.png" alt="Home Icon" height={100}/></NavLink>
                     </div>
                     <NavLink to="/" activeStyle>
                         Home
