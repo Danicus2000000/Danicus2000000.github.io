@@ -1,13 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.dc54cf0a.css",
-    "main.js": "/static/js/main.d2513ec3.js",
+    "main.css": "/static/css/main.03b21e57.css",
+    "main.js": "/static/js/main.2e5f6f56.js",
+    "static/media/banner-bg.png": "/static/media/banner-bg.bab854bbf9efef4b3284.png",
+    "static/media/footer-bg.png": "/static/media/footer-bg.9d6d338c245ac29a2e5b.png",
+    "static/media/BLEAttractions.png": "/static/media/BLEAttractions.12e13348d9fba6cd82b3.png",
+    "static/media/header-img.png": "/static/media/header-img.34ada54196c11df1adae.png",
+    "static/media/MemoryOfAGoldfish.png": "/static/media/MemoryOfAGoldfish.294c3fbd9296145eb240.png",
+    "static/media/clickertyCarrots.png": "/static/media/clickertyCarrots.f9ef7d67612347ad9644.png",
+    "static/media/PasswordStrengthChecker.png": "/static/media/PasswordStrengthChecker.e0c5b68ca0e96dab061f.png",
+    "static/media/CentraNo2-Bold.ttf": "/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
+    "static/media/CentraNo2-Medium.ttf": "/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
+    "static/media/CentraNo2-Book.ttf": "/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
+    "static/media/NoImage.png": "/static/media/NoImage.6168a5e7848217218fb6.png",
+    "static/media/logo.png": "/static/media/logo.b175e21d7b13c59af431.png",
+    "static/media/BLEAdminConsole.png": "/static/media/BLEAdminConsole.2f11e2f312c589690aa1.png",
+    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/github-mark.svg": "/static/media/github-mark.1dc5ab12ef3fc81720b0f4ff72ce5655.svg",
+    "static/media/linkedinIcon.svg": "/static/media/linkedinIcon.dff40ae802524d8fc0cbce3f312abe4f.svg",
     "index.html": "/index.html",
-    "main.dc54cf0a.css.map": "/static/css/main.dc54cf0a.css.map",
-    "main.d2513ec3.js.map": "/static/js/main.d2513ec3.js.map"
+    "main.03b21e57.css.map": "/static/css/main.03b21e57.css.map",
+    "main.2e5f6f56.js.map": "/static/js/main.2e5f6f56.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc54cf0a.css",
-    "static/js/main.d2513ec3.js"
+    "static/css/main.03b21e57.css",
+    "static/js/main.2e5f6f56.js"
   ]
 }
