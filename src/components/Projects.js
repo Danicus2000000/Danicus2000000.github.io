@@ -1,9 +1,14 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
-import colorSharp2 from "../assets/img/color-sharp2.png";
+import bleAttractionsImg from "../assets/img/Project Images/BLEAttractions.png";
+import bleAdminConsoleImg from "../assets/img/Project Images/BLEAdminConsole.png";
+import noImage from "../assets/img/Project Images/NoImage.png";
+import passwordCheckerImg from "../assets/img/Project Images/PasswordStrengthChecker.png";
+import posSystemImg from "../assets/img/Project Images/PosSystem.png";
+import clickertyCarrotsImg from "../assets/img/Project Images/clickertyCarrots.png";
+import memoryOfAGoldfishImg from "../assets/img/Project Images/MemoryOfAGoldfish.png";
+import pingPongImg from "../assets/img/Project Images/PingPong.png";
+import ping from "../assets/img/Project Images/Ping.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -11,35 +16,78 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "BLE Attractions",
+      description: "Dissertation project, A mobile application to provide information about attractions in the area to tourists from bluetooth beacons. (Database deprecated)",
+      imgUrl: bleAttractionsImg,
+      urlJump: "https://github.com/Danicus2000000/BLEAttractions"
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "BLE Admin Console",
+      description: "Dissertation project, An administrator console to manage the attractions in the BLE Attractions mobile application. (Database deprecated)",
+      imgUrl: bleAdminConsoleImg,
+      urlJump: "https://github.com/Danicus2000000/BLEAdminConsole"
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "NFC Reader",
+      description: "A basic application that takes inbound NFC signals and displays the data on a mobile devices screen.",
+      imgUrl: noImage,
+      urlJump: "https://github.com/Danicus2000000/NFCReader"
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Password strength checker",
+      description: "A basic password strength checker.",
+      imgUrl: passwordCheckerImg,
+      urlJump: "https://github.com/Danicus2000000/Password-checker"
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "POS System",
+      description: "A level NEA project, a POS system allowing for taking orders and the generation of receipts",
+      imgUrl: posSystemImg,
+      urlJump: "https://github.com/Danicus2000000/Pos-System"
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Path searching algorithms",
+      description: "A Program that allows you to run Brute Force, Dijkstra's and the A* algorithm on files of nodes to attempt to find the shortest path!",
+      imgUrl: noImage,
+      urlJump: "https://github.com/Danicus2000000/SoftwareEngineeringRoutesearch"
+    }
+
+  ];
+
+  const gameProjects = [
+    {
+      title: "Clickerty Carrots",
+      description: "A game about collecting carrots!",
+      imgUrl: clickertyCarrotsImg,
+      urlJump: "https://github.com/Danicus2000000/Clickerty-Carrots"
     },
+    {
+      title: "Memory Of A Goldfish",
+      description: "A card matching game all about goldfish!",
+      imgUrl: memoryOfAGoldfishImg,
+      urlJump: "https://github.com/Danicus2000000/MemoryOfAGoldfish"
+    },
+    {
+      title: "Ping pong",
+      description: "A basic game of ping pong",
+      imgUrl: pingPongImg,
+      urlJump: "https://github.com/Danicus2000000/Ping-Pong"
+    },
+    {
+      title: "Ping",
+      description: "A game where the goal is to keep the ball in the air as long as possible.",
+      imgUrl: ping,
+      urlJump: "https://github.com/Danicus2000000/Ping"
+    }
+  ];
+
+  const collaborationProjects = [
+    {
+      title: "Clickerty Carrots",
+      description: "A game about collecting carrots!",
+      imgUrl: clickertyCarrotsImg,
+      urlJump: "https://github.com/Danicus2000000/Clickerty-Carrots"
+    }
   ];
 
   return (
@@ -51,17 +99,17 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>Here you can see all of my projects divided by language.</p>
+                <p>Here you can see all of my projects divided into personal projects, created games and collaboration projects.</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
                       <Nav.Link eventKey="first">Projects</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Test</Nav.Link>
+                      <Nav.Link eventKey="second">Games</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Test</Nav.Link>
+                      <Nav.Link eventKey="third">Collaborations</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -80,10 +128,32 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <p>Gay</p>
+                      <Row>
+                        {
+                          gameProjects.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>Gayer</p>
+                      <Row>
+                        {
+                          collaborationProjects.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
@@ -92,7 +162,6 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
     </section>
   )
 }

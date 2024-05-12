@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/logo.png';
-import navIcon1 from '../assets/img/nav-icon1.svg';
+import navIcon1 from '../assets/img/linkedinIcon.svg';
+import navIcon2 from '../assets/img/github-mark.svg';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
@@ -48,7 +49,10 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/in/daniel-bulman-0b58161b6/"><img src={navIcon1} alt="" /></a>
+                <a href="https://github.com/Danicus2000000"><img src={navIcon2} alt="GitHub" /></a>
+              </div>
+              <div className="social-icon">
+                <a href="https://www.linkedin.com/in/daniel-bulman-0b58161b6/"><img src={navIcon1} alt="LinkedIn" /></a>
               </div>
             </span>
           </Navbar.Collapse>
