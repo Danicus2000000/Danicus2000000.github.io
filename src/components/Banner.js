@@ -10,7 +10,7 @@ export const Banner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Hello World!", "Hi! I'm Dan a Software Engineer", "Hi! I'm Dan a Full Stack Developer", "Hi! I'm Dan an Idiot" ];
+  const toRotate = [ ", Hello World!", ", a Software Engineer", ", I'm trying my best", ", Learning as I go", ", I'm never giving up" ];
   const period = 2000;
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export const Banner = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
-                <h1>{``} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Engineer", "Full Stack Developer", "Idiot" ]'><span className="wrap">{text}</span></span></h1>
+                <h1>{``} <span className="txt-rotate" dataPeriod="1000">Hi i'm Dan<span className="wrap">{text}</span></span></h1>
             </div>}
             </TrackVisibility>
           </Col>
@@ -63,7 +63,7 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  <img src={headerImg} alt="An Ai rendition of Dan" />
                 </div>}
             </TrackVisibility>
           </Col>
