@@ -1,31 +1,35 @@
 {
   "files": {
-    "main.css": "/static/css/main.03b21e57.css",
-    "main.js": "/static/js/main.996bb3d4.js",
-    "static/media/banner-bg.png": "/static/media/banner-bg.bab854bbf9efef4b3284.png",
-    "static/media/footer-bg.png": "/static/media/footer-bg.9d6d338c245ac29a2e5b.png",
-    "static/media/BLEAttractions.png": "/static/media/BLEAttractions.12e13348d9fba6cd82b3.png",
-    "static/media/header-img.png": "/static/media/header-img.34ada54196c11df1adae.png",
-    "static/media/MemoryOfAGoldfish.png": "/static/media/MemoryOfAGoldfish.294c3fbd9296145eb240.png",
-    "static/media/clickertyCarrots.png": "/static/media/clickertyCarrots.f9ef7d67612347ad9644.png",
-    "static/media/PasswordStrengthChecker.png": "/static/media/PasswordStrengthChecker.e0c5b68ca0e96dab061f.png",
+    "main.css": "/static/css/main.356c5699.css",
+    "main.js": "/static/js/main.54b1b3c5.js",
+    "static/media/banner-bg.webp": "/static/media/banner-bg.63aeea86d51e080dcb11.webp",
     "static/media/CentraNo2-Bold.ttf": "/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
     "static/media/CentraNo2-Book.ttf": "/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
-    "static/media/NoImage.png": "/static/media/NoImage.6168a5e7848217218fb6.png",
-    "static/media/logo.png": "/static/media/logo.b175e21d7b13c59af431.png",
-    "static/media/BLEAdminConsole.png": "/static/media/BLEAdminConsole.2f11e2f312c589690aa1.png",
+    "static/media/footer-bg.webp": "/static/media/footer-bg.ff544406b66c9ecceb6a.webp",
+    "static/media/BLEAttractions.webp": "/static/media/BLEAttractions.da9325d7f0a6212100de.webp",
+    "static/media/clickertyCarrots.webp": "/static/media/clickertyCarrots.202f7c3fd326978162f9.webp",
+    "static/media/header-img.webp": "/static/media/header-img.9ca91bd82df34116f517.webp",
+    "static/media/PasswordStrengthChecker.webp": "/static/media/PasswordStrengthChecker.42b955bd0b954c1f06d0.webp",
     "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/microsoft-certified-associate-badge.svg": "/static/media/microsoft-certified-associate-badge.2b0771425bd47b49917ba320d033a2b7.svg",
+    "static/media/MemoryOfAGoldfish.webp": "/static/media/MemoryOfAGoldfish.d173cfb66bc6dc6a7977.webp",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/logo.webp": "/static/media/logo.0e7bb5e1dd07c6e5b2f2.webp",
+    "static/media/BLEAdminConsole.webp": "/static/media/BLEAdminConsole.e87cb1be4b3666e57418.webp",
+    "static/media/NoImage.webp": "/static/media/NoImage.c71480cd941be4305e25.webp",
+    "static/media/PosSystem.webp": "/static/media/PosSystem.0bdb713d667991c48e36.webp",
+    "static/media/PingPong.webp": "/static/media/PingPong.76ff78e327cba1745f1c.webp",
     "static/media/github-mark.svg": "/static/media/github-mark.1dc5ab12ef3fc81720b0f4ff72ce5655.svg",
+    "static/media/Ping.webp": "/static/media/Ping.093e3e7415dd8f9cc04e.webp",
     "static/media/linkedinIcon.svg": "/static/media/linkedinIcon.dff40ae802524d8fc0cbce3f312abe4f.svg",
     "index.html": "/index.html",
-    "main.03b21e57.css.map": "/static/css/main.03b21e57.css.map",
-    "main.996bb3d4.js.map": "/static/js/main.996bb3d4.js.map"
+    "main.356c5699.css.map": "/static/css/main.356c5699.css.map",
+    "main.54b1b3c5.js.map": "/static/js/main.54b1b3c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.03b21e57.css",
-    "static/js/main.996bb3d4.js"
+    "static/css/main.356c5699.css",
+    "static/js/main.54b1b3c5.js"
   ]
 }
