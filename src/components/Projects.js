@@ -1,14 +1,14 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import bleAttractionsImg from "../assets/img/Project Images/BLEAttractions.png";
-import bleAdminConsoleImg from "../assets/img/Project Images/BLEAdminConsole.png";
-import noImage from "../assets/img/Project Images/NoImage.png";
-import passwordCheckerImg from "../assets/img/Project Images/PasswordStrengthChecker.png";
-import posSystemImg from "../assets/img/Project Images/PosSystem.png";
-import clickertyCarrotsImg from "../assets/img/Project Images/clickertyCarrots.png";
-import memoryOfAGoldfishImg from "../assets/img/Project Images/MemoryOfAGoldfish.png";
-import pingPongImg from "../assets/img/Project Images/PingPong.png";
-import ping from "../assets/img/Project Images/Ping.png";
+import bleAttractionsImg from "../assets/img/Project Images/BLEAttractions.webp";
+import bleAdminConsoleImg from "../assets/img/Project Images/BLEAdminConsole.webp";
+import noImage from "../assets/img/Project Images/NoImage.webp";
+import passwordCheckerImg from "../assets/img/Project Images/PasswordStrengthChecker.webp";
+import posSystemImg from "../assets/img/Project Images/PosSystem.webp";
+import clickertyCarrotsImg from "../assets/img/Project Images/clickertyCarrots.webp";
+import memoryOfAGoldfishImg from "../assets/img/Project Images/MemoryOfAGoldfish.webp";
+import pingPongImg from "../assets/img/Project Images/PingPong.webp";
+import ping from "../assets/img/Project Images/Ping.webp";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
