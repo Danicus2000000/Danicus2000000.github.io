@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a4328780.css",
-    "main.js": "/static/js/main.54b1b3c5.js",
+    "main.js": "/static/js/main.a5819f9e.js",
     "static/media/banner-bg.webp": "/static/media/banner-bg.63aeea86d51e080dcb11.webp",
     "static/media/CentraNo2-Bold.ttf": "/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
@@ -15,6 +15,7 @@
     "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/microsoft-certified-associate-badge.svg": "/static/media/microsoft-certified-associate-badge.2b0771425bd47b49917ba320d033a2b7.svg",
     "static/media/MemoryOfAGoldfish.webp": "/static/media/MemoryOfAGoldfish.d173cfb66bc6dc6a7977.webp",
+    "static/media/microsoft-certified-900-badge.svg": "/static/media/microsoft-certified-900-badge.47c546a6f22b42bda48fe9f9b970bf4c.svg",
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/logo.webp": "/static/media/logo.0e7bb5e1dd07c6e5b2f2.webp",
     "static/media/BLEAdminConsole.webp": "/static/media/BLEAdminConsole.e87cb1be4b3666e57418.webp",
@@ -26,10 +27,10 @@
     "static/media/linkedinIcon.svg": "/static/media/linkedinIcon.dff40ae802524d8fc0cbce3f312abe4f.svg",
     "index.html": "/index.html",
     "main.a4328780.css.map": "/static/css/main.a4328780.css.map",
-    "main.54b1b3c5.js.map": "/static/js/main.54b1b3c5.js.map"
+    "main.a5819f9e.js.map": "/static/js/main.a5819f9e.js.map"
   },
   "entrypoints": [
     "static/css/main.a4328780.css",
-    "static/js/main.54b1b3c5.js"
+    "static/js/main.a5819f9e.js"
   ]
 }
