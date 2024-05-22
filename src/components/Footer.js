@@ -2,7 +2,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import logo from "../assets/img/logo.webp";
 import navIcon1 from "../assets/img/linkedinIcon.svg";
 import navIcon2 from "../assets/img/github-mark.svg";
-import navIcon3 from "../assets/img/microsoft-certified-associate-badge.svg";
+import cert1 from "../assets/img/microsoft-certified-associate-badge.svg";
+import cert2 from "../assets/img/microsoft-certified-900-badge.svg"
 
 export const Footer = () => {
   return (
@@ -24,7 +25,8 @@ export const Footer = () => {
         <Row>
           <Col className="badge-icon">
           <div className="badge-icon">
-              <img src={navIcon3} alt="Microsoft Developer Associate" />
+              <img src={cert2} alt="Microsoft Azure Fundamentals" />
+              <img src={cert1} alt="Microsoft Developer Associate" />
             </div>
           </Col>
         </Row>
