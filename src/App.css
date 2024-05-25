@@ -113,6 +113,13 @@ span.navbar-text {
     display: flex;
     align-items: center;
 }
+.badge-icon a{
+  size: inherit;
+  display: flex;
+  width: 45%;
+  height: 100%;
+  justify-content: flex-end;
+}
 .badge-icon {
   display: flex;
   width: 45%;
