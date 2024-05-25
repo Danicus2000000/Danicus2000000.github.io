@@ -25,8 +25,8 @@ export const Footer = () => {
         <Row>
           <Col className="badge-icon">
           <div className="badge-icon">
-              <a href="https://www.credly.com/badges/efa75c96-a928-41b9-8a69-953521dc24c0/public_url" className="badge-icon"><img src={cert2} alt="Microsoft Azure Fundamentals" onClick={() => document.URL = ""}/></a>
-              <a href="https://learn.microsoft.com/api/credentials/share/en-us/DanielBulman-7645/1A00FD8FBBE2AE13?sharingId=2C21B91AC902FC88" className="badge-icon"><img src={cert1} alt="Microsoft Developer Associate"/></a>
+              <img src={cert2} alt="Microsoft Azure Fundamentals" onClick={() => window.location.href = "https://www.credly.com/badges/efa75c96-a928-41b9-8a69-953521dc24c0/public_url"}/>
+              <img src={cert1} alt="Microsoft Developer Associate" onClick={() => window.location.href = "https://learn.microsoft.com/api/credentials/share/en-us/DanielBulman-7645/1A00FD8FBBE2AE13?sharingId=2C21B91AC902FC88s"}/>
             </div>
           </Col>
         </Row>
