@@ -256,6 +256,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
+  box-shadow: 8px 8px 15px #717171;
 }
 .banner h1 {
   font-size: 65px;
