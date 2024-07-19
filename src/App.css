@@ -99,11 +99,13 @@ nav.navbar a.navbar-brand {
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  color: #fff !important;
+  color: #fff!important;
+  text-shadow: 5px 5px 12px #121212;
   letter-spacing: 0.8px;
   padding: 0 25px;
   font-size: 18px;
   opacity: 0.75;
+
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
@@ -302,8 +304,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
         transform: translateY(-20px);
     }
 }
-.txt-rotate > .wrap {
+.txt-rotate {
   border-right: 0.08em solid #666;
+  text-shadow: 5px 5px 12px #121212;
+}
+
+.wrap {
+  border-right: 0.08em solid #666;
+  text-shadow: 5px 5px 12px #121212;
 }
 
 /************ Skills Css ************/
