@@ -1,13 +1,15 @@
-name: Deploy gh-page Branch
+name: Verify website build integrity
 permissions:
   contents: write
 # Run workflow on every push to the master branch
 on:
   push:
     branches: [ main ]
+  pull_request:
+      branches: [ main ]
 
 jobs:
-  deploy-to-github-pages:
+  verify-build-integrity:
     # use ubuntu-latest image to run steps on
     runs-on: ubuntu-latest
     steps:
@@ -26,8 +28,9 @@ jobs:
     - name: Generates npm build
       run: npm run build
 
-    # Commit to gh-pages branch
+    # Commit to gh-pages branch if this is a main branch push
     - name: Commit wwwroot to GitHub Pages
+      if: github.ref_name == 'main' && github.event_name == 'push'
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         BRANCH: gh-pages
