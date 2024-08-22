@@ -310,6 +310,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   text-shadow: 5px 5px 12px #121212;
 }
 
+.txt-rotate-bounding-box{
+  display: inline-block;
+  min-width: 100%;
+  min-height: 75%;
+}
+
 .wrap {
   border-right: 0.08em solid #666;
   text-shadow: 5px 5px 12px #121212;
