@@ -15,10 +15,12 @@ jobs:
     steps:
     # uses GitHub's checkout action to checkout code form the master branch
     - uses: actions/checkout@v4
-      
+
     # sets up node
     - name: Setup node 3.x
       uses: actions/setup-node@v4
+      with:
+        node-version: '>=20.0.0'
 
     # Installs required npm packages
     - name: Installs required npm dependencies
@@ -29,9 +31,9 @@ jobs:
       run: npm run build
 
     # Commit to gh-pages branch if this is a main branch push
-    - name: Commit wwwroot to GitHub Pages
+    - name: Commit www root to GitHub Pages
       if: github.ref_name == 'main' && github.event_name == 'push'
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        BRANCH: gh-pages
-        FOLDER: dist
+        branch: gh-pages
+        folder: dist
