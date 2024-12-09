@@ -1,18 +1,18 @@
-import { useState, useEffect, useCallback} from "react";
+import * as React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.webp";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Banner = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState('');
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [, setIndex] = useState(1);
+  const [loopNum, setLoopNum] = React.useState(0);
+  const [isDeleting, setIsDeleting] = React.useState(false);
+  const [text, setText] = React.useState('');
+  const [delta, setDelta] = React.useState(300 - Math.random() * 100);
+  const [, setIndex] = React.useState(1);
   const period = 2000;
 
-  const tick = useCallback(() => {
+  const tick = React.useCallback(() => {
     const toRotate = [ ", Hello World!", ", a Software Engineer", ", I'm trying my best", ", Learning as I go", ", I'm never giving up" ];
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
@@ -36,7 +36,7 @@ export const Banner = () => {
       setIndex(prevIndex => prevIndex + 1);
     }
   }, [isDeleting, loopNum, text.length])
-    useEffect(() => {
+  React.useEffect(() => {
     let ticker = setInterval(() => {
       tick();
     }, delta);
@@ -54,7 +54,7 @@ export const Banner = () => {
                 {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <span className="tagline">Welcome to my Portfolio</span>
-                  <h1>{``} <span className="txt-rotate" dataPeriod="1000">Hi i'm Dan<span className="wrap">{text}</span></span></h1>
+                  <h1>{``} <span className="txt-rotate" dataPeriod="1000">Hi i&apos;m Dan<span className="wrap">{text}</span></span></h1>
                 </div>}
               </TrackVisibility>
             </div>
