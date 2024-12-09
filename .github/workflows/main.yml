@@ -22,7 +22,7 @@ jobs:
 
     # Installs required npm packages
     - name: Installs required npm dependencies
-      run: npm install
+      run: npm ci
 
     # Generate npm build
     - name: Generates npm build
