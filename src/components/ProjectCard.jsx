@@ -1,4 +1,5 @@
 import { Col } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 export const ProjectCard = ({ title, description, imgUrl, urlJump }) => {
   return (
@@ -12,4 +13,11 @@ export const ProjectCard = ({ title, description, imgUrl, urlJump }) => {
       </div></a>
     </Col>
   )
+}
+
+ProjectCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string.isRequired,
+  urlJump: PropTypes.string.isRequired,
 }
