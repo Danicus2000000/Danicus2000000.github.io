@@ -313,7 +313,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .txt-rotate-bounding-box{
   display: inline-block;
   min-width: 100%;
-  min-height: 150%;
+  min-height: 500px;
 }
 
 .wrap {
