@@ -35,6 +35,8 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: '1.23.5'
+        check-latest: true
+        cache-dependency-path: blog/go.sum
 
     # Installs required npm packages
     - name: Installs required npm dependencies
