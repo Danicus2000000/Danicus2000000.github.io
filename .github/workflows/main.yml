@@ -1,19 +1,20 @@
 name: Verify website build integrity
 permissions:
   contents: write
-# Run workflow on every push to the master branch
+# Run workflow on every push to the main branch, on prs into main or on manual trigger
 on:
   push:
     branches: [ main ]
   pull_request:
       branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   verify-build-integrity:
     # use ubuntu-latest image to run steps on
     runs-on: ubuntu-latest
     steps:
-    # uses GitHub's checkout action to checkout code form the master branch
+    # uses GitHub's checkout action to checkout code
     - uses: actions/checkout@v4
 
     # sets up node
@@ -21,6 +22,17 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '>=20.0.0'
+    
+    # sets up Hugo
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: '0.141.0'
+        extended: true
+    
+    # sets up Go
+    - name: Setup Go
+      uses: actions/setup-go@v5
 
     # Installs required npm packages
     - name: Installs required npm dependencies
@@ -29,6 +41,26 @@ jobs:
     # Generate npm build
     - name: Generates npm build
       run: npm run build
+    
+    # Navigate into blog folder
+    - name: Navigate to blog
+      run: cd blog
+
+    # Build blog
+    - name: Build blog
+      run: hugo build
+    
+    # Rename build folder to correct web format
+    - name: Rename build folder
+      run: ren public blog
+
+    # Copy blog build to root
+    - name: Copy blog build to root
+      run: mv public ../dist
+   
+    # Navigate to root
+    - name: Navigate to root
+      run: cd ..
 
     # Commit to gh-pages branch if this is a main branch push
     - name: Commit www root to GitHub Pages
