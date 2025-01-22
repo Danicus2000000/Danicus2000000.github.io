@@ -4,6 +4,16 @@ title: The LAN Before Time
 module:
   imports:
   - path: github.com/adityatelange/hugo-PaperMod
+menu:
+  main:
+    - identifier: Home
+      name: Home
+      url: ../
+      weight: 10
+    - identifier: Get in touch
+      name: Get in touch
+      url: mailto:testertestington940@gmail.com
+      weight: 20
 outputs:
   home:
       - HTML
