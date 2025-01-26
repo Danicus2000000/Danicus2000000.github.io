@@ -13,7 +13,14 @@ export const Banner = () => {
   const period = 2000;
 
   const tick = React.useCallback(() => {
-    const toRotate = [ ", Hello World!", ", a Software Engineer", ", I'm trying my best", ", Learning as I go", ", I'm never giving up" ];
+    const toRotate = [
+      ", Hello World!",
+      ", getting more coffee",
+      ", a Software Engineer",
+      ", I'm trying my best",
+      ", Learning as I go",
+      ", I'm never giving up",
+    ];
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
     let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
