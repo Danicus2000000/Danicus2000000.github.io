@@ -21,6 +21,7 @@ export const Skills = () => {
     }
   };
 const skillValues = [
+  "test proof",
   "C#",
   "Python",
   "Azure DevOps",
@@ -37,7 +38,7 @@ const skillValues = [
   "GraphQL",
   "TypeScript",
   "JavaScript",
-  "GitHub Actions"
+  "GitHub Actions",
 ];
 const formattedSkillValues = skillValues.map((skillValue, index) => {
   return (
