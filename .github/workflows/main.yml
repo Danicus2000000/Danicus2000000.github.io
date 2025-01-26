@@ -1,6 +1,8 @@
 name: Verify website build integrity
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 # Run workflow on every push to the main branch, on prs into main or on manual trigger
 on:
   push:
@@ -16,6 +18,11 @@ jobs:
     steps:
     # uses GitHub's checkout action to checkout code
     - uses: actions/checkout@v4
+
+    # Sets up github pages
+    - name: Setup Pages
+      if: github.ref_name == 'main' && github.event_name == 'push'
+      uses: actions/configure-pages@v5
 
     # sets up node
     - name: Setup node 3.x
@@ -61,10 +68,16 @@ jobs:
       run: mv blog ../dist
       working-directory: ./blog
 
-    # Commit to gh-pages branch if this is a main branch push
-    - name: Commit www root to GitHub Pages
+    # uploads the dist folder to be deployed to the site
+    - name: Upload artifact
       if: github.ref_name == 'main' && github.event_name == 'push'
-      uses: JamesIves/github-pages-deploy-action@v4
+      uses: actions/upload-pages-artifact@v3
       with:
-        branch: gh-pages
-        folder: dist
+        # Upload dist folder
+        path: './dist'
+
+    # Deploy generated build artifact to gh pages
+    - name: Deploy to GitHub Pages
+      if: github.ref_name == 'main' && github.event_name == 'push'
+      id: deployment
+      uses: actions/deploy-pages@v4
