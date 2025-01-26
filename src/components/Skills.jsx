@@ -21,7 +21,6 @@ export const Skills = () => {
     }
   };
 const skillValues = [
-  "test proof",
   "C#",
   "Python",
   "Azure DevOps",
