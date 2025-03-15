@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../assets/img/logo.webp';
-import navIcon1 from '../assets/img/linkedinIcon.svg';
-import navIcon2 from '../assets/img/github-mark.svg';
-import {
-  BrowserRouter as Router
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import React from "react";
+import logo from "../assets/img/logo.webp";
+import navIcon1 from "../assets/img/linkedinIcon.svg";
+import navIcon2 from "../assets/img/github-mark.svg";
 
 export const NavBar = () => {
-
-  const [activeLink, setActiveLink] = useState('home');
+  const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,16 +17,16 @@ export const NavBar = () => {
       } else {
         setScrolled(false);
       }
-    }
+    };
 
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [])
+  }, []);
 
-  const onUpdateActiveLink = (value) => {
+  const onUpdateActiveLink = (value: React.SetStateAction<string>) => {
     setActiveLink(value);
-  }
+  };
 
   return (
     <Router>
@@ -98,4 +96,4 @@ export const NavBar = () => {
       </Navbar>
     </Router>
   );
-}
+};
