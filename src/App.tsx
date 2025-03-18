@@ -6,8 +6,9 @@ import { Skills } from "./components/Skills";
 import { Projects } from "./components/Projects";
 import { Footer } from "./components/Footer";
 import React from "react";
+import "react-multi-carousel/lib/styles.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <NavBar />
@@ -17,6 +18,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

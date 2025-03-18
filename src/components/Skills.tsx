@@ -1,6 +1,5 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 
 export const Skills = () => {
   const responsive = {
@@ -21,7 +20,7 @@ export const Skills = () => {
       items: 1,
     },
   };
-  const skillValues = [
+  const skillValues: string[] = [
     "C#",
     "Python",
     "Azure DevOps",
@@ -41,11 +40,14 @@ export const Skills = () => {
     "GitHub Actions",
   ];
   const formattedSkillValues = skillValues.map((skillValue, index) => {
-    return (
-      <div key={index} className="item">
-        <h5>{skillValue}</h5>
-      </div>
-    );
+    const resultCard: React.FC = () => {
+      return (
+        <div key={index} className="item">
+          <h5>{skillValue}</h5>
+        </div>
+      );
+    };
+    return resultCard;
   });
   return (
     <section className="skill" id="skills">

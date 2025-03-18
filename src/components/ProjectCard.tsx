@@ -2,14 +2,14 @@ import { Col } from "react-bootstrap";
 import PropTypes from "prop-types";
 import React from "react";
 
-type ProjectCardProps = {
+export type ProjectCardProps = {
   title: string;
   description: string;
   imgUrl: string;
   urlJump: string;
 };
 
-export const ProjectCard = ({
+export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   imgUrl,
@@ -28,11 +28,4 @@ export const ProjectCard = ({
       </a>
     </Col>
   );
-};
-
-ProjectCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  imgUrl: PropTypes.string.isRequired,
-  urlJump: PropTypes.string.isRequired,
 };

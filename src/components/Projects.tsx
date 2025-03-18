@@ -1,5 +1,5 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCard, ProjectCardProps } from "./ProjectCard";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import React from "react";
@@ -14,7 +14,7 @@ import PING_PONG_IMG from "../assets/img/Project Images/PingPong.webp";
 import PING_IMG from "../assets/img/Project Images/Ping.webp";
 
 export const Projects = () => {
-  const projects = [
+  const projects: ProjectCardProps[] = [
     {
       title: "BLE Attractions",
       description:
@@ -59,7 +59,7 @@ export const Projects = () => {
     },
   ];
 
-  const gameProjects = [
+  const gameProjects: ProjectCardProps[] = [
     {
       title: "Clickerty Carrots",
       description: "A game about collecting carrots!",
@@ -87,7 +87,7 @@ export const Projects = () => {
     },
   ];
 
-  const collaborationProjects = [
+  const collaborationProjects: ProjectCardProps[] = [
     {
       title: "Clickerty Carrots",
       description: "A game about collecting carrots!",
