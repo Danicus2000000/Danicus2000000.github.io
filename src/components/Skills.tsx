@@ -49,16 +49,15 @@ export const Skills = () => {
   /**
    * Formats the skill values into a card.
    */
-  const formattedSkillValues = skillValues.map((skillValue, index) => {
-    const resultCard = () => {
+  const formattedSkillValues: React.JSX.Element[] = skillValues.map(
+    (skillValue, index) => {
       return (
         <div key={index} className="item">
           <h5>{skillValue}</h5>
         </div>
       );
-    };
-    return resultCard;
-  });
+    }
+  );
 
   return (
     <section className="skill" id="skills">
@@ -70,7 +69,8 @@ export const Skills = () => {
               <p>See below a list of my developed skills.</p>
               <Carousel
                 responsive={responsive}
-                infinite={true}
+                infinite
+                autoPlay
                 className="owl-carousel owl-theme skill-slider"
               >
                 {formattedSkillValues}
