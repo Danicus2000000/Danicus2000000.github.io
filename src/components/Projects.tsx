@@ -2,7 +2,6 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard, ProjectCardProps } from "./ProjectCard";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import React from "react";
 import NO_IMAGE_IMG from "../assets/img/Project Images/NoImage.webp";
 import CLICKERTY_CARROTS_IMG from "../assets/img/Project Images/clickertyCarrots.webp";
 import BLE_ATTRACTIONS_IMG from "../assets/img/Project Images/BLEAttractions.webp";
@@ -14,6 +13,9 @@ import PING_PONG_IMG from "../assets/img/Project Images/PingPong.webp";
 import PING_IMG from "../assets/img/Project Images/Ping.webp";
 
 export const Projects = () => {
+  /**
+   * List of projects.
+   */
   const projects: ProjectCardProps[] = [
     {
       title: "BLE Attractions",
@@ -59,6 +61,9 @@ export const Projects = () => {
     },
   ];
 
+  /**
+   * List of game projects.
+   */
   const gameProjects: ProjectCardProps[] = [
     {
       title: "Clickerty Carrots",
@@ -87,6 +92,9 @@ export const Projects = () => {
     },
   ];
 
+  /**
+   * List of collaboration projects.
+   */
   const collaborationProjects: ProjectCardProps[] = [
     {
       title: "Clickerty Carrots",
