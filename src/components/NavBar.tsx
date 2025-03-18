@@ -24,6 +24,11 @@ export const NavBar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  /**
+   * Updates the active link.
+   * @param value The value to update the active link to.
+   * @returns void
+   */
   const onUpdateActiveLink = (value: React.SetStateAction<string>) => {
     setActiveLink(value);
   };

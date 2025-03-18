@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.webp";
 import "animate.css";
@@ -12,6 +12,10 @@ export const Banner = () => {
   const [, setIndex] = React.useState(1);
   const period = 2000;
 
+  /**
+   * Ticks the text.
+   * @returns void
+   */
   const tick = React.useCallback(() => {
     const toRotate = [
       ", Hello World!",
@@ -58,7 +62,7 @@ export const Banner = () => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <div className="txt-rotate-bounding-box">
               <TrackVisibility>

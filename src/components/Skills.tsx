@@ -1,7 +1,9 @@
-import React from "react";
 import Carousel from "react-multi-carousel";
 
 export const Skills = () => {
+  /**
+   * Responsive settings for the carousel.
+   */
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -20,6 +22,10 @@ export const Skills = () => {
       items: 1,
     },
   };
+
+  /**
+   * List of skill values.
+   */
   const skillValues: string[] = [
     "C#",
     "Python",
@@ -39,8 +45,12 @@ export const Skills = () => {
     "JavaScript",
     "GitHub Actions",
   ];
+
+  /**
+   * Formats the skill values into a card.
+   */
   const formattedSkillValues = skillValues.map((skillValue, index) => {
-    const resultCard: React.FC = () => {
+    const resultCard = () => {
       return (
         <div key={index} className="item">
           <h5>{skillValue}</h5>
@@ -49,6 +59,7 @@ export const Skills = () => {
     };
     return resultCard;
   });
+
   return (
     <section className="skill" id="skills">
       <div className="container">

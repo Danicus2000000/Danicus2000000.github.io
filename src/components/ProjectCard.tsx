@@ -1,6 +1,4 @@
 import { Col } from "react-bootstrap";
-import PropTypes from "prop-types";
-import React from "react";
 
 export type ProjectCardProps = {
   title: string;
@@ -9,7 +7,7 @@ export type ProjectCardProps = {
   urlJump: string;
 };
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({
+export const ProjectCard = ({
   title,
   description,
   imgUrl,
