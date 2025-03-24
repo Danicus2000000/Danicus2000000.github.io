@@ -19,12 +19,12 @@
     "react-multi-carousel": "^2.8.5",
     "react-on-screen": "^2.1.1",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^7.3.0",
+    "react-router-dom": "^7.4.0",
     "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.22.0",
-    "@types/react": "^19.0.10",
+    "@eslint/js": "^9.23.0",
+    "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^9.23.0",
