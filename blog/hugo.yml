@@ -4,6 +4,17 @@ title: The LAN Before Time
 module:
   imports:
   - path: github.com/adityatelange/hugo-PaperMod
+params:
+  author: Daniel Bulman
+  ShowWordCount: true
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowFullTextinRSS: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShareButtons: ["linkedin"]
+  showtoc: true
+  tocopen: true
 menu:
   main:
     - identifier: Home
@@ -14,6 +25,14 @@ menu:
       name: Get in touch
       url: mailto:testertestington940@gmail.com
       weight: 20
+    - identifier: All Posts
+      name: All Posts
+      url: /posts/
+      weight: 30
+    - identifier: Search
+      name: Search
+      url: /search/
+      weight: 40
 outputs:
   home:
       - HTML
