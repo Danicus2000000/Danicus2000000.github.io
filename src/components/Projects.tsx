@@ -11,6 +11,7 @@ import POS_SYSTEM_IMG from "../assets/img/Project Images/PosSystem.webp";
 import MEMORY_OF_A_GOLDFISH_IMG from "../assets/img/Project Images/MemoryOfAGoldfish.webp";
 import PING_PONG_IMG from "../assets/img/Project Images/PingPong.webp";
 import PING_IMG from "../assets/img/Project Images/Ping.webp";
+import OYSTER_LINTER_IMG from "../assets/img/Project Images/OysterLinter.webp";
 
 export const Projects = () => {
   /**
@@ -54,7 +55,7 @@ export const Projects = () => {
     {
       title: "Path searching algorithms",
       description:
-        "A Program that allows you to run Brute Force, Dijkstra's and the A* algorithm on files of nodes to attempt to find the shortest path!",
+        "A Program that allows you to find the shortest path with various algorithms.",
       imgUrl: NO_IMAGE_IMG,
       urlJump:
         "https://github.com/Danicus2000000/SoftwareEngineeringRoutesearch",
@@ -102,6 +103,12 @@ export const Projects = () => {
       imgUrl: CLICKERTY_CARROTS_IMG,
       urlJump: "https://github.com/Danicus2000000/Clickerty-Carrots",
     },
+    {
+      title: "Oyster Linter",
+      description: "A linter for the Oyster programming language, created in collaboration with HeckingGoose.",
+      imgUrl: OYSTER_LINTER_IMG,
+      urlJump: "https://github.com/Danicus2000000/oyster-linter"
+    }
   ];
 
   return (
