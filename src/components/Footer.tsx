@@ -32,40 +32,13 @@ export const Footer = () => {
         <Row>
           <Col className="badge-icon">
             <div className="badge-icon">
-              <img
-                src={cert2}
-                alt="Microsoft Azure Fundamentals"
-                onClick={() =>
-                  window.open(
-                    "https://www.credly.com/badges/efa75c96-a928-41b9-8a69-953521dc24c0/public_url",
-                    "_blank"
-                  )
-                }
-              />
+              <img src={cert2} title="Microsoft Developer Associate (AZ-900)" />
               <img
                 src={cert1}
-                alt="Microsoft Developer Associate"
-                onClick={() => {
-                  window.open(
-                    "https://learn.microsoft.com/api/credentials/share/en-us/DanielBulman-7645/1A00FD8FBBE2AE13?sharingId=2C21B91AC902FC88s",
-                    "_blank"
-                  );
-                  window.open(
-                    "https://learn.microsoft.com/api/credentials/share/en-us/DanielBulman-7645/275BDE78EABBEC5E?sharingId=2C21B91AC902FC88",
-                    "_blank"
-                  );
-                }}
+                title="Microsoft Certified: Azure AI Engineer Associate (AZ-102)
+Microsoft Certified: Azure Developer Associate (AZ-204)"
               />
-              <img
-                src={cert3}
-                alt="Github Copilot"
-                onClick={() =>
-                  window.open(
-                    "https://www.credly.com/badges/c7aecf30-58a9-4541-b066-2c8823b14339/public_url",
-                    "_blank"
-                  )
-                }
-              />
+              <img src={cert3} title="Github Copilot Certification" />
             </div>
           </Col>
         </Row>
