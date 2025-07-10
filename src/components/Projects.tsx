@@ -21,7 +21,7 @@ export const Projects = () => {
     {
       title: "BLE Attractions",
       description:
-        "Dissertation project, A mobile application to provide information about attractions in the area to tourists from bluetooth beacons. (Database deprecated)",
+        "Dissertation project, A mobile application to provide information about attractions! (Database deprecated)",
       imgUrl: BLE_ATTRACTIONS_IMG,
       urlJump: "https://github.com/Danicus2000000/BLEAttractions",
     },
