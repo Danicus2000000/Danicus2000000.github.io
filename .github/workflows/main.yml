@@ -71,7 +71,7 @@ jobs:
     # uploads the dist folder to be deployed to the site
     - name: Upload artifact
       if: github.ref_name == 'main' && github.event_name == 'push'
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v4
       with:
         # Upload dist folder
         path: './dist'
