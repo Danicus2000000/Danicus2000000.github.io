@@ -19,7 +19,7 @@
     "react-multi-carousel": "^2.8.5",
     "react-on-screen": "^2.1.1",
     "react-responsive-carousel": "^3.2.23",
-    "react-router-dom": "^7.9.5",
+    "react-router-dom": "^7.9.6",
     "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
@@ -33,6 +33,6 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "typescript": "^5.9.3",
-    "vite": "^7.2.2"
+    "vite": "^7.2.4"
   }
 }
