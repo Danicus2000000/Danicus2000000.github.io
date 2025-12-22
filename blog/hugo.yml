@@ -1,4 +1,4 @@
-baseURL: {{ absURL "" }}{{'/blog'}}
+baseURL: {{ absURL "/blog" }}
 languageCode: en-uk
 title: The LAN Before Time
 module:
