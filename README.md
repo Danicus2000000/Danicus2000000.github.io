@@ -6,7 +6,7 @@ To view the website either select a page from the [index page](https://danicus20
 [Portfolio](https://d.abulman.com/)  
 [Blog](https://d.abulman.com/blog)
 
-Github pages mirror:
+Github pages mirror:  
 [Portfolio](https://danicus2000000.github.io/)  
 [Blog](https://danicus2000000.github.io/blog)
 
