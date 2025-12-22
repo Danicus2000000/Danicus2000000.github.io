@@ -81,3 +81,13 @@ jobs:
       if: github.ref_name == 'main' && github.event_name == 'push'
       id: deployment
       uses: actions/deploy-pages@v4
+    
+    # Deploy to Cloudflare Pages
+    - name: Deploy to Cloudflare Pages
+      if: github.ref_name == 'main' && github.event_name == 'push'
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        command: pages deploy _site --project-name=danwebsite
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
