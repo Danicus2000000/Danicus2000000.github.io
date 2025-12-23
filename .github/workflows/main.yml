@@ -65,7 +65,11 @@ jobs:
 
     # Build blog
     - name: Build blog
-      run: hugo build
+      run: |
+          hugo \
+            --gc \
+            --minify \
+            --cacheDir "${{ runner.temp }}/hugo_cache"
       working-directory: ./blog
 
     - name: Cache save
