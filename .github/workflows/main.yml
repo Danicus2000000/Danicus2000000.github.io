@@ -1,6 +1,7 @@
 name: Verify website build integrity
 permissions:
   contents: read
+  deployments: write
   pages: write
   id-token: write
 # Run workflow on every push to the main branch, on prs into main or on manual trigger
@@ -37,6 +38,15 @@ jobs:
         hugo-version: '0.141.0'
         extended: true
     
+    - name: Cache restore
+      id: cache-restore
+      uses: actions/cache/restore@v4
+      with:
+        path: ${{ runner.temp }}/hugo_cache
+        key: hugo-${{ github.run_id }}
+        restore-keys:
+          hugo-
+    
     # sets up Go
     - name: Setup Go
       uses: actions/setup-go@v6
@@ -57,6 +67,13 @@ jobs:
     - name: Build blog
       run: hugo build
       working-directory: ./blog
+
+    - name: Cache save
+      id: cache-save
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ runner.temp }}/hugo_cache
+        key: ${{ steps.cache-restore.outputs.cache-primary-key }}
     
     # Rename build folder to correct web format
     - name: Rename build folder
