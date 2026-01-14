@@ -2,6 +2,7 @@
 date = '2026-01-08T08:48:25Z'
 draft = false
 title = 'Building a Github Action for Cloudflare Project Deployment'
+category = ["YAML"]
 +++
 
 During recent development for the [oyster language](https://github.com/HeckingGoose/Oyster) by [@HeckingGoose](https://github.com/heckinggoose) I was asked to assist with building a github action to deploy a Jekyll static pages site to a cloudflare project this was to allow for documentation to be referenced both within the linter for the language and in general.
