@@ -1,5 +1,5 @@
 +++
-date = '2026-01-15T22:20:03Z'
+date = '2026-01-15T12:20:03Z'
 draft = false
 title = 'What in the SQL? An in depth discussion of SQL vs NOSQL Implementations'
 category = ["SQL"]
