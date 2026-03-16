@@ -2,9 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.webp";
 import "animate.css";
-import TrackVisibility from "react-on-screen";
 
-export const Banner = () => {
+export function Banner() {
   const [loopNum, setLoopNum] = React.useState(0);
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [text, setText] = React.useState("");
@@ -65,37 +64,21 @@ export const Banner = () => {
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <div className="txt-rotate-bounding-box">
-              <TrackVisibility>
-                {({ isVisible }) => (
-                  <div
-                    className={
-                      isVisible ? "animate__animated animate__fadeIn" : ""
-                    }
-                  >
-                    <span className="tagline">Welcome to my Portfolio</span>
-                    <h1>
-                      {``}{" "}
-                      <span className="txt-rotate" data-period="1000">
-                        Hi i&apos;m Dan<span className="wrap">{text}</span>
-                      </span>
-                    </h1>
-                  </div>
-                )}
-              </TrackVisibility>
+              <div className="animate__animated animate__fadeIn">
+                <span className="tagline">Welcome to my Portfolio</span>
+                <h1>
+                  {``}{" "}
+                  <span className="txt-rotate" data-period="1000">
+                    Hi i&apos;m Dan<span className="wrap">{text}</span>
+                  </span>
+                </h1>
+              </div>
             </div>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__zoomIn" : ""
-                  }
-                >
-                  <img src={headerImg} alt="An Ai rendition of Dan" />
-                </div>
-              )}
-            </TrackVisibility>
+            <div className="animate__animated animate__zoomIn">
+              <img src={headerImg} alt="An Ai rendition of Dan" />
+            </div>
           </Col>
         </Row>
       </Container>

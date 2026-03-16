@@ -6,7 +6,7 @@ import logo from "../assets/img/logo.webp";
 import navIcon1 from "../assets/img/linkedinIcon.svg";
 import navIcon2 from "../assets/img/github-mark.svg";
 
-export const NavBar = () => {
+export function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 

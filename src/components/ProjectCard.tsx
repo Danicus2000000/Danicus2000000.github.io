@@ -7,12 +7,12 @@ export type ProjectCardProps = {
   urlJump: string;
 };
 
-export const ProjectCard = ({
+export function ProjectCard({
   title,
   description,
   imgUrl,
   urlJump,
-}: ProjectCardProps) => {
+}: ProjectCardProps) {
   return (
     <Col size={12} sm={6} md={3} className="proj-colbx">
       <a href={urlJump}>
