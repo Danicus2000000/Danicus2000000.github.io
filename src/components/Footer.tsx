@@ -7,7 +7,7 @@ import cert2 from "../assets/img/microsoft-certified-900-badge.svg";
 import cert3 from "../assets/img/github-copilot.svg";
 import cert4 from "../assets/img/microsoft-certified-expert-badge.svg";
 
-export const Footer = () => {
+export function Footer() {
   return (
     <footer className="footer">
       <Container>

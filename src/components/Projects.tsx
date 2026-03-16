@@ -1,7 +1,6 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard, ProjectCardProps } from "./ProjectCard";
 import "animate.css";
-import TrackVisibility from "react-on-screen";
 import NO_IMAGE_IMG from "../assets/img/Project Images/NoImage.webp";
 import CLICKERTY_CARROTS_IMG from "../assets/img/Project Images/clickertyCarrots.webp";
 import BLE_ATTRACTIONS_IMG from "../assets/img/Project Images/BLEAttractions.webp";
@@ -13,7 +12,7 @@ import PING_PONG_IMG from "../assets/img/Project Images/PingPong.webp";
 import PING_IMG from "../assets/img/Project Images/Ping.webp";
 import OYSTER_LINTER_IMG from "../assets/img/Project Images/OysterLinter.webp";
 
-export const Projects = () => {
+export function Projects() {
   /**
    * List of projects.
    */
@@ -105,10 +104,11 @@ export const Projects = () => {
     },
     {
       title: "Oyster Linter",
-      description: "A linter for the Oyster programming language, created in collaboration with HeckingGoose.",
+      description:
+        "A linter for the Oyster programming language, created in collaboration with HeckingGoose.",
       imgUrl: OYSTER_LINTER_IMG,
-      urlJump: "https://github.com/Danicus2000000/oyster-linter"
-    }
+      urlJump: "https://github.com/Danicus2000000/oyster-linter",
+    },
   ];
 
   return (
@@ -116,66 +116,56 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
+            <div className="animate__animated animate__fadeIn">
+              <h2>Projects</h2>
+              <p>
+                Here you can see all of my projects divided into personal
+                projects, created games and collaboration projects.
+              </p>
+              <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                <Nav
+                  variant="pills"
+                  className="nav-pills mb-5 justify-content-center align-items-center"
+                  id="pills-tab"
                 >
-                  <h2>Projects</h2>
-                  <p>
-                    Here you can see all of my projects divided into personal
-                    projects, created games and collaboration projects.
-                  </p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Nav
-                      variant="pills"
-                      className="nav-pills mb-5 justify-content-center align-items-center"
-                      id="pills-tab"
-                    >
-                      <Nav.Item>
-                        <Nav.Link eventKey="first">Projects</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="second">Games</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="third">Collaborations</Nav.Link>
-                      </Nav.Item>
-                    </Nav>
-                    <Tab.Content
-                      id="slideInUp"
-                      className={
-                        isVisible ? "animate__animated animate__slideInUp" : ""
-                      }
-                    >
-                      <Tab.Pane eventKey="first">
-                        <Row>
-                          {projects.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
-                        </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="second">
-                        <Row>
-                          {gameProjects.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
-                        </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <Row>
-                          {collaborationProjects.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
-                        </Row>
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Tab.Container>
-                </div>
-              )}
-            </TrackVisibility>
+                  <Nav.Item>
+                    <Nav.Link eventKey="first">Projects</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="second">Games</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="third">Collaborations</Nav.Link>
+                  </Nav.Item>
+                </Nav>
+                <Tab.Content
+                  id="slideInUp"
+                  className="animate__animated animate__slideInUp"
+                >
+                  <Tab.Pane eventKey="first">
+                    <Row>
+                      {projects.map((project, index) => {
+                        return <ProjectCard key={index} {...project} />;
+                      })}
+                    </Row>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="second">
+                    <Row>
+                      {gameProjects.map((project, index) => {
+                        return <ProjectCard key={index} {...project} />;
+                      })}
+                    </Row>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="third">
+                    <Row>
+                      {collaborationProjects.map((project, index) => {
+                        return <ProjectCard key={index} {...project} />;
+                      })}
+                    </Row>
+                  </Tab.Pane>
+                </Tab.Content>
+              </Tab.Container>
+            </div>
           </Col>
         </Row>
       </Container>
