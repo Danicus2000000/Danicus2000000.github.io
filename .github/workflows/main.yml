@@ -23,7 +23,7 @@ jobs:
     # Sets up github pages
     - name: Setup Pages
       if: github.ref_name == 'main' && github.event_name == 'push'
-      uses: actions/configure-pages@v5
+      uses: actions/configure-pages@v6
 
     # sets up node
     - name: Setup node 3.x
