@@ -101,7 +101,7 @@ jobs:
     - name: Deploy to GitHub Pages
       if: github.ref_name == 'main' && github.event_name == 'push'
       id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v5
     
     # Deploy to Cloudflare Pages
     - name: Deploy to Cloudflare Pages
