@@ -15,6 +15,8 @@ params:
   ShareButtons: ["linkedin"]
   showtoc: true
   tocopen: true
+  meta:
+    favicon: true
 menu:
   main:
     - identifier: Home
