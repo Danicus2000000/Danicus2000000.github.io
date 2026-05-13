@@ -2,6 +2,7 @@
 date = '2025-06-12T11:19:45+01:00'
 draft = false
 title = 'What I Saw at Integrate'
+category = ["Conference"]
 +++
 
 ### Codeful Workflows
