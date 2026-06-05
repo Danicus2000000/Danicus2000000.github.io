@@ -1,0 +1,189 @@
+<template>
+  <section id="projects" class="project">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="animate__animated animate__fadeIn">
+            <h2>Projects</h2>
+            <p>
+              Here you can see all of my projects divided into personal
+              projects, created games and collaboration projects.
+            </p>
+            <ul
+              class="nav nav-pills mb-5 justify-content-center align-items-center"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  :class="{ active: activeTab === 'first' }"
+                  type="button"
+                  @click="activeTab = 'first'"
+                >
+                  Projects
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  :class="{ active: activeTab === 'second' }"
+                  type="button"
+                  @click="activeTab = 'second'"
+                >
+                  Games
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  :class="{ active: activeTab === 'third' }"
+                  type="button"
+                  @click="activeTab = 'third'"
+                >
+                  Collaborations
+                </button>
+              </li>
+            </ul>
+            <div class="animate__animated animate__slideInUp">
+              <div v-show="activeTab === 'first'" class="row">
+                <ProjectCard
+                  v-for="project in projects"
+                  :key="project.title"
+                  :title="project.title"
+                  :description="project.description"
+                  :imgUrl="project.imgUrl"
+                  :urlJump="project.urlJump"
+                />
+              </div>
+              <div v-show="activeTab === 'second'" class="row">
+                <ProjectCard
+                  v-for="project in gameProjects"
+                  :key="project.title"
+                  :title="project.title"
+                  :description="project.description"
+                  :imgUrl="project.imgUrl"
+                  :urlJump="project.urlJump"
+                />
+              </div>
+              <div v-show="activeTab === 'third'" class="row">
+                <ProjectCard
+                  v-for="project in collaborationProjects"
+                  :key="project.title"
+                  :title="project.title"
+                  :description="project.description"
+                  :imgUrl="project.imgUrl"
+                  :urlJump="project.urlJump"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import ProjectCard from "./ProjectCard.vue";
+import NO_IMAGE_IMG from "../assets/img/Project Images/NoImage.webp";
+import CLICKERTY_CARROTS_IMG from "../assets/img/Project Images/clickertyCarrots.webp";
+import BLE_ATTRACTIONS_IMG from "../assets/img/Project Images/BLEAttractions.webp";
+import BLE_ADMIN_CONSOLE_IMG from "../assets/img/Project Images/BLEAdminConsole.webp";
+import PASSWORD_STRENGTH_CHECKER_IMG from "../assets/img/Project Images/PasswordStrengthChecker.webp";
+import POS_SYSTEM_IMG from "../assets/img/Project Images/PosSystem.webp";
+import MEMORY_OF_A_GOLDFISH_IMG from "../assets/img/Project Images/MemoryOfAGoldfish.webp";
+import PING_PONG_IMG from "../assets/img/Project Images/PingPong.webp";
+import PING_IMG from "../assets/img/Project Images/Ping.webp";
+import OYSTER_LINTER_IMG from "../assets/img/Project Images/OysterLinter.webp";
+
+const activeTab = ref("first");
+
+const projects = [
+  {
+    title: "BLE Attractions",
+    description:
+      "Dissertation project, A mobile application to provide information about attractions! (Database deprecated)",
+    imgUrl: BLE_ATTRACTIONS_IMG,
+    urlJump: "https://github.com/Danicus2000000/BLEAttractions",
+  },
+  {
+    title: "BLE Admin Console",
+    description:
+      "Dissertation project, An administrator console to manage the attractions in the BLE Attractions mobile application. (Database deprecated)",
+    imgUrl: BLE_ADMIN_CONSOLE_IMG,
+    urlJump: "https://github.com/Danicus2000000/BLEAdminConsole",
+  },
+  {
+    title: "NFC Reader",
+    description:
+      "A basic application that takes inbound NFC signals and displays the data on a mobile devices screen.",
+    imgUrl: NO_IMAGE_IMG,
+    urlJump: "https://github.com/Danicus2000000/NFCReader",
+  },
+  {
+    title: "Password strength checker",
+    description: "A basic password strength checker.",
+    imgUrl: PASSWORD_STRENGTH_CHECKER_IMG,
+    urlJump: "https://github.com/Danicus2000000/Password-checker",
+  },
+  {
+    title: "POS System",
+    description:
+      "A level NEA project, a POS system allowing for taking orders and the generation of receipts",
+    imgUrl: POS_SYSTEM_IMG,
+    urlJump: "https://github.com/Danicus2000000/Pos-System",
+  },
+  {
+    title: "Path searching algorithms",
+    description:
+      "A Program that allows you to find the shortest path with various algorithms.",
+    imgUrl: NO_IMAGE_IMG,
+    urlJump: "https://github.com/Danicus2000000/SoftwareEngineeringRoutesearch",
+  },
+];
+
+const gameProjects = [
+  {
+    title: "Clickerty Carrots",
+    description: "A game about collecting carrots!",
+    imgUrl: CLICKERTY_CARROTS_IMG,
+    urlJump: "https://github.com/Danicus2000000/Clickerty-Carrots",
+  },
+  {
+    title: "Memory Of A Goldfish",
+    description: "A card matching game all about goldfish!",
+    imgUrl: MEMORY_OF_A_GOLDFISH_IMG,
+    urlJump: "https://github.com/Danicus2000000/MemoryOfAGoldfish",
+  },
+  {
+    title: "Ping pong",
+    description: "A basic game of ping pong",
+    imgUrl: PING_PONG_IMG,
+    urlJump: "https://github.com/Danicus2000000/Ping-Pong",
+  },
+  {
+    title: "Ping",
+    description:
+      "A game where the goal is to keep the ball in the air as long as possible.",
+    imgUrl: PING_IMG,
+    urlJump: "https://github.com/Danicus2000000/Ping",
+  },
+];
+
+const collaborationProjects = [
+  {
+    title: "Clickerty Carrots",
+    description: "A game about collecting carrots!",
+    imgUrl: CLICKERTY_CARROTS_IMG,
+    urlJump: "https://github.com/Danicus2000000/Clickerty-Carrots",
+  },
+  {
+    title: "Oyster Linter",
+    description:
+      "A linter for the Oyster programming language, created in collaboration with HeckingGoose.",
+    imgUrl: OYSTER_LINTER_IMG,
+    urlJump: "https://github.com/Danicus2000000/oyster-linter",
+  },
+];
+</script>
