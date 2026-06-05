@@ -6,7 +6,7 @@
           <div class="skill-bx wow zoomIn">
             <h2>Skills</h2>
             <p>See below a list of my developed skills.</p>
-            <div class="skill-carousel" :style="viewportStyle">
+            <div class="skill-carousel" :style="carouselStyle">
               <button
                 type="button"
                 aria-label="Previous skills"
@@ -16,7 +16,7 @@
               >
                 ◀
               </button>
-              <div class="skill-carousel__viewport">
+              <div class="skill-carousel__viewport" :style="viewportStyle">
                 <div class="skill-carousel__track" :style="trackStyle">
                   <div
                     v-for="(skill, index) in displayedSkills"
@@ -46,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, type CSSProperties } from "vue";
 
 const skillValues = [
   "C#",
@@ -99,13 +99,22 @@ const displayedSkills = computed(() =>
   }),
 );
 
-const viewportStyle = {
-  overflow: "hidden",
+const carouselStyle: CSSProperties = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "1rem",
   width: "100%",
+};
+
+const viewportStyle: CSSProperties = {
+  overflow: "hidden",
+  flex: "1 1 auto",
+  minWidth: 0,
   maxWidth: "1000px",
 };
 
-const trackStyle = computed(() => ({
+const trackStyle = computed<CSSProperties>(() => ({
   display: "flex",
   gap: "1rem",
   alignItems: "stretch",
@@ -113,7 +122,7 @@ const trackStyle = computed(() => ({
   transition: isAnimating.value ? "transform 300ms ease" : "none",
 }));
 
-const itemStyle = {
+const itemStyle: CSSProperties = {
   flex: "0 0 33.333%",
   padding: "1rem",
   textAlign: "center",
