@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # uses GitHub's checkout action to checkout code
-    - uses: actions/checkout@v6
+    - uses: actions/checkout@v7
 
     # Sets up github pages
     - name: Setup Pages
