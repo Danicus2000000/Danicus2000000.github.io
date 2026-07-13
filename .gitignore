@@ -38,3 +38,9 @@ blog/hugo.linux
 
 # Temporary lock file while building
 blog/.hugo_build.lock
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
