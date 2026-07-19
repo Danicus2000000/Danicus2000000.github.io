@@ -25,7 +25,7 @@ menu:
       weight: 10
     - identifier: Get in touch
       name: Get in touch
-      url: mailto:queries@dbulman.co.uk
+      url: mailto:queries@dbulman.co.uk?subject=Blog%20query%20-%20requested%20via%20site%20mailto%20link%20from%20https%3A%2F%2Fdbulman.co.uk
       weight: 20
     - identifier: All Posts
       name: All Posts
