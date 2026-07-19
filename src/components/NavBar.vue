@@ -44,7 +44,7 @@
             Projects
           </a>
           <a
-            href="mailto:queries@dbulman.co.uk?subject=Website%20-%20get%20in%20touch%20here%20from%20https%3A%2F%2Fdanicus2000000.github.io"
+            href="mailto:queries@dbulman.co.uk?subject=Website%20query%20-%20requested%20via%20site%20mailto%20link%20from%20https%3A%2F%2Fdbulman.co.uk"
             class="nav-link navbar-link"
           >
             Get in touch
