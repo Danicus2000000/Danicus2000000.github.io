@@ -401,7 +401,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
 
 .portfolio-app[data-theme="light"] nav.navbar .navbar-toggler-icon::before {
   background-color: #102819;
-  box-shadow: 0 7px 0 #102819, 0 14px 0 #102819;
+  box-shadow: 0 -7px 0 #102819, 0 7px 0 #102819;
 }
 
 .portfolio-app[data-theme="light"] nav.navbar .navbar-toggler-icon::after {
