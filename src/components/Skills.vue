@@ -20,8 +20,9 @@
                 <div class="skill-carousel__track" :style="trackStyle">
                   <div
                     v-for="(skill, index) in displayedSkills"
-                    :key="index"
+                    :key="`${skill}-${index}`"
                     class="skill-carousel__item"
+                    :class="{ 'skill-carousel__item--fly-in': skill === flyInSkill }"
                     :style="itemStyle"
                   >
                     <h5 style="margin: 0">{{ skill }}</h5>
@@ -72,6 +73,7 @@ const visibleCount = 3;
 const currentIndex = ref(0);
 const slideOffset = ref(0);
 const isAnimating = ref(false);
+const flyInSkill = ref<string | null>(null);
 
 const clampIndex = (value: number) => {
   const len = skillValues.length;
@@ -83,18 +85,28 @@ const startSlide = (direction: "prev" | "next") => {
 
   isAnimating.value = true;
   const delta = direction === "next" ? 1 : -1;
+  const incomingSkill =
+    direction === "next"
+      ? skillValues[clampIndex(currentIndex.value + visibleCount)]
+      : skillValues[clampIndex(currentIndex.value + delta)];
+
   slideOffset.value = direction === "next" ? -33.333 : 33.333;
 
   window.setTimeout(() => {
     currentIndex.value = clampIndex(currentIndex.value + delta);
+    flyInSkill.value = incomingSkill;
     slideOffset.value = 0;
     isAnimating.value = false;
+
+    window.setTimeout(() => {
+      flyInSkill.value = null;
+    }, 440);
   }, 300);
 };
 
 const displayedSkills = computed(() =>
-  Array.from({ length: visibleCount + 2 }).map((_, i) => {
-    const index = clampIndex(currentIndex.value + i - 1);
+  Array.from({ length: visibleCount }).map((_, i) => {
+    const index = clampIndex(currentIndex.value + i);
     return skillValues[index];
   }),
 );
@@ -103,15 +115,16 @@ const carouselStyle: CSSProperties = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  gap: "1rem",
+  gap: "0.25rem",
   width: "100%",
 };
 
 const viewportStyle: CSSProperties = {
   overflow: "hidden",
-  flex: "1 1 auto",
+  flex: "0 0 auto",
+  width: `${visibleCount * 220 + (visibleCount - 1) * 16}px`,
   minWidth: 0,
-  maxWidth: "1000px",
+  margin: 0,
 };
 
 const trackStyle = computed<CSSProperties>(() => ({
