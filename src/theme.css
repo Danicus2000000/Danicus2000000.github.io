@@ -1,12 +1,13 @@
 
 .portfolio-app {
-  --page-bg: #07130f;
-  --page-bg-soft: #0e1f1d;
+  --page-bg: #194d3c;
+  --page-bg-soft: #11291f;
   --text: #eefcf7;
   --text-soft: #b2ddd1;
   --text-muted: #8aaa99;
+  --dot-color: rgba(164, 255, 210, 0.55);
   --line: rgba(221, 255, 238, 0.16);
-  --panel: rgba(29, 76, 61, 0.34);
+  --panel: rgba(42, 54, 51, 0.34);
   --panel-soft: rgba(216, 251, 234, 0.06);
   --heading: #ecfff8;
   --accent: #8dffa9;
@@ -14,13 +15,13 @@
   --accent-deep: #194d3c;
   --shadow: rgba(0, 255, 170, 0.2);
   --glimmer: rgba(164, 255, 210, 0.55);
-  --skill-card: rgba(151, 238, 210, 0.08);
   --project-card: rgba(240, 255, 244, 0.06);
   --project-card-border: rgba(221, 255, 238, 0.16);
+  --skill-card: var(--project-card);
   --button-text: var(--text);
   --button-bg: var(--panel);
   --section-glass: rgba(211, 255, 231, 0.045);
-  --section-bg: #07130f;
+  --section-bg: #0d221c;
   --navbar-bg: var(--panel);
   --navbar-scrolled-bg: var(--panel);
   --navbar-link-color: #eefcf7;
@@ -54,6 +55,8 @@
   --text: #323232;
   --text-soft: #404040;
   --text-muted: #666666;
+  --dot-color: rgba(0, 0, 0, 0.78);
+
   --line: rgba(17, 75, 40, 0.14);
   --panel: rgba(65, 160, 120, 0.16);
   --panel-soft: rgba(44, 156, 103, 0.06);
@@ -63,9 +66,9 @@
   --accent-deep: #bcefc1;
   --shadow: rgba(23, 119, 84, 0.22);
   --glimmer: rgba(88, 210, 146, 0.55);
-  --skill-card: var(--panel);
   --project-card: #f8fff9;
   --project-card-border: rgba(18, 75, 46, 0.15);
+  --skill-card: var(--project-card);
   --button-text: var(--heading);
   --button-bg: var(--panel-soft);
   --section-glass: rgba(37, 96, 47, 0.045);
@@ -108,7 +111,7 @@
   content: "";
   position: fixed;
   inset: -12%;
-  background-image: radial-gradient(var(--glimmer) 1px, transparent 1px);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1), transparent 100%);
   transform: rotate(8deg);
@@ -181,7 +184,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(var(--glimmer), transparent 1px);
+  background-image: radial-gradient(var(--dot-color), transparent 1px);
   background-size: 30px 30px;
   opacity: 0.55;
 }

@@ -123,14 +123,17 @@ const trackStyle = computed<CSSProperties>(() => ({
 }));
 
 const itemStyle: CSSProperties = {
-  flex: "0 0 33.333%",
+  flex: "0 0 220px",
+  width: "220px",
+  boxSizing: "border-box",
   padding: "1rem",
   textAlign: "center",
   borderRadius: "0.5rem",
   border: "1px solid var(--line, rgba(221, 255, 238, 0.16))",
   background: "var(--skill-card, rgba(151, 238, 210, 0.08))",
   color: "var(--skill-box-text, var(--text))",
-  maxHeight: "80px",
+  minHeight: "80px",
+  whiteSpace: "nowrap",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
