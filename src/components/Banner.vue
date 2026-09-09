@@ -31,11 +31,16 @@ let timeoutId: number | undefined;
 
 const toRotate = [
   ", Hello World!",
-  ", getting more coffee",
+  ", getting more green tea",
   ", a Software Engineer",
   ", I'm trying my best",
   ", Learning as I go",
   ", I'm never giving up",
+  ", a problem solver",
+  ", a little bit silly",
+  ", probably sleepy",
+  ", it'll all be fine!",
+  ", a spanner"
 ];
 
 

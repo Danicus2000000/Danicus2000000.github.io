@@ -1,5 +1,8 @@
 <template>
-  <div class="col-12 col-sm-6 col-md-3 proj-colbx">
+  <div
+    class="col-12 col-sm-6 col-md-3 proj-colbx project-card-item"
+    :style="{ animationDelay: `${props.delay ?? 0}ms` }"
+  >
     <a :href="props.urlJump" target="_blank" rel="noreferrer noopener">
       <div class="proj-imgbx">
         <img :src="props.imgUrl" alt="Project image" />
@@ -18,5 +21,6 @@ const props = defineProps<{
   description: string;
   imgUrl: string;
   urlJump: string;
+  delay?: number;
 }>();
 </script>

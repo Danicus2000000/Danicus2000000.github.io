@@ -45,34 +45,37 @@
               </li>
             </ul>
             <div class="animate__animated animate__slideInUp">
-              <div v-show="activeTab === 'first'" class="row">
+              <div v-if="activeTab === 'first'" class="row project-grid">
                 <ProjectCard
-                  v-for="project in projects"
+                  v-for="(project, index) in projects"
                   :key="project.title"
                   :title="project.title"
                   :description="project.description"
                   :imgUrl="project.imgUrl"
                   :urlJump="project.urlJump"
+                  :delay="index * 160"
                 />
               </div>
-              <div v-show="activeTab === 'second'" class="row">
+              <div v-else-if="activeTab === 'second'" class="row project-grid">
                 <ProjectCard
-                  v-for="project in gameProjects"
+                  v-for="(project, index) in gameProjects"
                   :key="project.title"
                   :title="project.title"
                   :description="project.description"
                   :imgUrl="project.imgUrl"
                   :urlJump="project.urlJump"
+                  :delay="index * 160"
                 />
               </div>
-              <div v-show="activeTab === 'third'" class="row">
+              <div v-else-if="activeTab === 'third'" class="row project-grid">
                 <ProjectCard
-                  v-for="project in collaborationProjects"
+                  v-for="(project, index) in collaborationProjects"
                   :key="project.title"
                   :title="project.title"
                   :description="project.description"
                   :imgUrl="project.imgUrl"
                   :urlJump="project.urlJump"
+                  :delay="index * 160"
                 />
               </div>
             </div>
