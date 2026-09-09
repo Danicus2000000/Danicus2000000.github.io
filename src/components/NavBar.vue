@@ -1,18 +1,20 @@
 <template>
-  <nav class="navbar navbar-expand-md" :class="{ scrolled }">
+  <nav class="navbar navbar-expand-md" :class="{ scrolled, light: theme === 'light' }">
     <div class="container">
       <a class="navbar-brand" href="/">
         <img :src="logo" alt="Logo" />
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        aria-label="Toggle navigation"
-        :aria-expanded="isMenuOpen"
-        @click="toggleMenu"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="navbar-controls">
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-label="Toggle navigation"
+          :aria-expanded="isMenuOpen"
+          @click="toggleMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
       <div
         id="basic-navbar-nav"
         class="collapse navbar-collapse"
@@ -62,6 +64,17 @@
               <img :src="navIcon1" alt="LinkedIn" />
             </a>
           </div>
+          <button class="theme-toggle" type="button" :aria-label="themeLabel" @click="emit('theme-toggle')">
+            <span class="theme-toggle__icon" aria-hidden="true">
+              <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2v3M12 19v3M4.7 4.7l2.2 2.2M17.1 17.1l2.2 2.2M2 12h3M19 12h3M4.7 19.3l2.2-2.2M17.1 6.9l2.2-2.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <circle cx="12" cy="12" r="4" fill="currentColor" />
+              </svg>
+              <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 13.5A6.8 6.8 0 0 1 10.5 6a6 6 0 1 0 7.5 7.5z" fill="currentColor" stroke="currentColor" stroke-width="1.4" />
+              </svg>
+            </span>
+          </button>
         </span>
       </div>
     </div>
@@ -69,14 +82,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import logo from "../assets/img/logo.webp";
 import navIcon1 from "../assets/img/linkedinIcon.svg";
 import navIcon2 from "../assets/img/github-mark.svg";
 
+const props = defineProps<{ theme: "dark" | "light" }>();
+const emit = defineEmits<{ (e: "theme-toggle"): void }>();
+
 const activeLink = ref("home");
 const scrolled = ref(false);
 const isMenuOpen = ref(false);
+const themeLabel = computed(() => props.theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
 
 const setActiveLink = (value: string) => {
   activeLink.value = value;

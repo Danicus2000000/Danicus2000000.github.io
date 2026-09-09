@@ -63,6 +63,74 @@ button {
   background-color: transparent;
 }
 
+.theme-toggle {
+  color: var(--button-text, var(--text));
+  border: 1px solid var(--line, rgba(255,255,255,0.18));
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--button-bg, var(--panel));
+  transition: transform 280ms ease, border-color 280ms ease, background 280ms ease, color 280ms ease, box-shadow 280ms ease;
+  box-shadow: 0 0 0 transparent;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.portfolio-app[data-theme="light"] .theme-toggle {
+  border-color: #102819;
+  color: #102819;
+  background: var(--button-bg, var(--panel-soft));
+  box-shadow: 0 0 0 1px rgba(16, 40, 25, 0.22), 0 0 0 4px var(--section-glass, rgba(37, 96, 47, 0.045));
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent, #8dffa9);
+  box-shadow: 0 0 0 4px var(--section-glass, rgba(216,251,234,0.08));
+}
+
+.theme-toggle__icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  transition: opacity 280ms ease, transform 280ms ease;
+  color: var(--text, #eefcf7);
+}
+
+.theme-icon--sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.theme-icon--moon {
+  opacity: 0;
+  transform: scale(0.7) rotate(-90deg);
+}
+
+.portfolio-app[data-theme="light"] .theme-icon--sun {
+  opacity: 0;
+  transform: scale(0.7) rotate(90deg);
+}
+
+.portfolio-app[data-theme="light"] .theme-icon--moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
 input:focus, textarea:focus, select:focus {
   outline: none;
 }
@@ -88,19 +156,22 @@ nav.navbar {
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition:  0.32s ease-in-out;
+  background: var(--navbar-bg);
+  color: var(--text);
+  transition: background 420ms ease, color 320ms ease, box-shadow 320ms ease, 0.32s ease-in-out;
 }
 nav.navbar.scrolled {
   padding: 0px 0;
-  background-color: #121212;
+  background-color: var(--navbar-scrolled-bg);
+  box-shadow: 0 12px 40px var(--shadow);
 }
 nav.navbar a.navbar-brand {
     width: 9%;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  color: #fff!important;
-  text-shadow: 5px 5px 12px #121212;
+  color: var(--navbar-link-color)!important;
+  text-shadow: 5px 5px 12px var(--navbar-link-shadow);
   letter-spacing: 0.8px;
   padding: 0 25px;
   font-size: 18px;
@@ -192,57 +263,119 @@ span.navbar-text {
 	height: 100%;
 	position: absolute;
 }
+nav.navbar .navbar-toggler {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--navbar-toggle-color, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  nav.navbar .navbar-toggler {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  nav.navbar .navbar-toggler {
+    display: flex !important;
+  }
+}
+
 nav.navbar .navbar-toggler:active,
 nav.navbar .navbar-toggler:focus {
-	outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
+
 nav.navbar .navbar-toggler-icon {
   width: 24px;
-  height: 17px;
-  background-image: none;
+  height: 24px;
+  display: block;
   position: relative;
-  border-bottom: 2px solid #fff;
-  transition: all 300ms linear;
-  top: -2px;
+  background: transparent;
 }
-nav.navbar .navbar-toggler-icon:focus {
-	border-bottom: 2px solid #fff;
+
+nav.navbar .navbar-toggler-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--navbar-toggle-color, #ffffff);
+  box-shadow: 0 -7px 0 var(--navbar-toggle-color, #ffffff), 0 7px 0 var(--navbar-toggle-color, #ffffff);
+  transition: transform 300ms linear, box-shadow 300ms linear, background-color 300ms linear, top 300ms linear;
 }
-nav.navbar .navbar-toggler-icon:after,
-nav.navbar .navbar-toggler-icon:before {
-	width: 24px;
-	position: absolute;
-	height: 2px;
-	background-color: #fff;
-	top: 0;
-	left: 0;
-	content: '';
-	z-index: 2;
-	transition: all 300ms linear;
+
+nav.navbar .navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: transparent;
+  transition: transform 300ms linear, background-color 300ms linear, opacity 300ms linear;
 }
-nav.navbar .navbar-toggler-icon:after {
-	top: 8px;
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  top: 11px;
+  background-color: var(--navbar-toggle-color, #ffffff);
+  transform: rotate(45deg);
+  box-shadow: none;
 }
-nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
-	transform: rotate(45deg);
-	background-color: #fff;
-	height: 2px;
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  background-color: var(--navbar-toggle-color, #ffffff);
+  opacity: 1;
+  transform: rotate(-45deg);
 }
-nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
-	transform: translateY(8px) rotate(-45deg);
-	background-color: #fff;
-	height: 2px;
+
+.portfolio-app[data-theme="light"] nav.navbar .navbar-toggler {
+  border-color: #102819;
+  background: transparent;
+  box-shadow: 0 0 0 1px rgba(16, 40, 25, 0.22), 0 0 0 4px var(--section-glass, rgba(37, 96, 47, 0.045));
 }
-nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-	border-color: transparent;
+
+.portfolio-app[data-theme="light"] nav.navbar .navbar-toggler-icon::before {
+  background-color: #102819;
+  box-shadow: 0 7px 0 #102819, 0 14px 0 #102819;
+}
+
+.portfolio-app[data-theme="light"] nav.navbar .navbar-toggler-icon::after {
+  background-color: #102819;
+}
+
+.portfolio-app[data-theme="light"] nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  top: 11px;
+  transform: rotate(45deg);
+  box-shadow: none;
+  background-color: #102819;
+}
+
+.portfolio-app[data-theme="light"] nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  top: 11px;
+  opacity: 1;
+  background-color: #102819;
+  transform: rotate(-45deg);
 }
 
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.webp');
+  background: var(--banner-bg, linear-gradient(135deg, var(--accent-deep), var(--accent-hot)));
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -327,18 +460,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .skill-bx {
-  background: #151515;
+  background: var(--skill-box-bg);
+  color: var(--skill-box-text);
   border-radius: 64px;
+  border: 1px solid var(--skill-box-border);
   text-align: center;
   padding: 60px 50px;
   margin-top: -60px;
+  box-shadow: 0 22px 50px var(--shadow);
 }
 .skill h2 {
 	font-size: 45px;
 	font-weight: 700;
+  color: var(--heading);
 }
 .skill p {
-    color: #B8B8B8;
+    color: var(--skill-box-muted);
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
@@ -365,7 +502,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  background-color: var(--section-bg, #07130f);
 }
 .project h2 {
 	font-size: 45px;
@@ -385,54 +522,64 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 72%;
   margin: 0 auto;
   border-radius: 50px;
-  background-color: rgb(255 255 255 / 10%);
-  overflow: hidden;
+  background-color: var(--panel-soft, rgba(216, 251, 234, 0.06));
+  border: 1px solid var(--line, rgba(221, 255, 238, 0.16));
+  overflow: visible;
+  box-shadow: inset 0 0 0 1px var(--line, rgba(221, 255, 238, 0.16));
 }
 .project .nav.nav-pills .nav-item {
   width: 33.33333%;
 }
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
-  border-radius: 0;
+  border-radius: 50px;
   padding: 17px 0;
-  color: #fff;
+  color: var(--text, #eefcf7);
   width: 100%;
   font-size: 17px;
   letter-spacing: 0.8px;
   font-weight: 500;
   position: relative;
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   text-align: center;
   z-index: 0;
 }
 .project .nav.nav-pills .nav-link::before {
     content: "";
     position: absolute;
-    width: 0;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    background: linear-gradient(90.21deg, #18d17b -5.91%, #4A2FBD 111.58%);
+    background: linear-gradient(90.21deg, var(--accent, #18d17b) -5.91%, var(--accent-deep, #4A2FBD) 111.58%);
     top: 0;
     left: 0;
     z-index: -1;
-    transition: 0.3s ease-in-out;
+    opacity: 0;
+    border-radius: 50px;
+    transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
+.project .nav.nav-pills .nav-link:hover::before,
 .project .nav.nav-pills .nav-link.active::before {
-    width: 100% !important;
+    opacity: 0.34;
 }
 .project .nav.nav-pills .nav-link.active {
-    border: 1px solid rgba(255, 255, 255, 1);
+    border: 1px solid var(--heading, #eefcf7);
+    color: var(--heading, #eefcf7);
+}
+.project .nav.nav-pills .nav-link:hover {
+    color: var(--heading, #eefcf7);
 }
 .nav-link#projects-tabs-tab-first {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 55px 0px 0px 55px;
+  border: 1px solid var(--line, rgba(221, 255, 238, 0.16));
+  border-radius: 50px 0px 0px 50px;
 }
 .nav-link#projects-tabs-tab-second {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid var(--line, rgba(221, 255, 238, 0.16));
+  border-bottom: 1px solid var(--line, rgba(221, 255, 238, 0.16));
 }
 .nav-link#projects-tabs-tab-third {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0 55px 55px 0;
+  border: 1px solid var(--line, rgba(221, 255, 238, 0.16));
+  border-radius: 0 50px 50px 0;
 }
 .proj-imgbx {
   position: relative;
@@ -499,8 +646,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Footer Css ************/
 .footer {
-  padding: 0 0 50px 0;
-  background-image: url('./assets/img/footer-bg.webp');
+  padding: 40px 0 50px 0;
+  background: var(--footer-bg, linear-gradient(135deg, var(--accent-deep), var(--accent-hot)));
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
