@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, type CSSProperties } from "vue";
+import { ref, computed, onMounted, onUnmounted, type CSSProperties } from "vue";
 
 const skillValues = [
   "C#",
@@ -69,11 +69,30 @@ const skillValues = [
   "GitHub Actions",
 ];
 
-const visibleCount = 3;
+const isMobile = ref(
+  typeof window !== "undefined" && window.innerWidth <= 767,
+);
+const visibleCount = computed(() => (isMobile.value ? 1 : 3));
 const currentIndex = ref(0);
 const slideOffset = ref(0);
 const isAnimating = ref(false);
 const flyInSkill = ref<string | null>(null);
+
+const updateMobileLayout = () => {
+  isMobile.value = window.innerWidth <= 767;
+};
+
+onMounted(() => {
+  if (typeof window !== "undefined") {
+    window.addEventListener("resize", updateMobileLayout);
+  }
+});
+
+onUnmounted(() => {
+  if (typeof window !== "undefined") {
+    window.removeEventListener("resize", updateMobileLayout);
+  }
+});
 
 const clampIndex = (value: number) => {
   const len = skillValues.length;
@@ -87,7 +106,7 @@ const startSlide = (direction: "prev" | "next") => {
   const delta = direction === "next" ? 1 : -1;
   const incomingSkill =
     direction === "next"
-      ? skillValues[clampIndex(currentIndex.value + visibleCount)]
+      ? skillValues[clampIndex(currentIndex.value + visibleCount.value)]
       : skillValues[clampIndex(currentIndex.value + delta)];
 
   slideOffset.value = direction === "next" ? -33.333 : 33.333;
@@ -105,7 +124,7 @@ const startSlide = (direction: "prev" | "next") => {
 };
 
 const displayedSkills = computed(() =>
-  Array.from({ length: visibleCount }).map((_, i) => {
+  Array.from({ length: visibleCount.value }).map((_, i) => {
     const index = clampIndex(currentIndex.value + i);
     return skillValues[index];
   }),
@@ -119,18 +138,19 @@ const carouselStyle: CSSProperties = {
   width: "100%",
 };
 
-const viewportStyle: CSSProperties = {
+const viewportStyle = computed<CSSProperties>(() => ({
   overflow: "hidden",
   flex: "0 0 auto",
-  width: `${visibleCount * 220 + (visibleCount - 1) * 16}px`,
+  width: `${visibleCount.value * 220 + (visibleCount.value - 1) * 16}px`,
   minWidth: 0,
   margin: 0,
-};
+}));
 
 const trackStyle = computed<CSSProperties>(() => ({
   display: "flex",
   gap: "1rem",
   alignItems: "stretch",
+  justifyContent: "center",
   transform: `translateX(${slideOffset.value}%)`,
   transition: isAnimating.value ? "transform 300ms ease" : "none",
 }));
