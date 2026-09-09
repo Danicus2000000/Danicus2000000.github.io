@@ -172,17 +172,36 @@ nav.navbar {
   top: 0;
   z-index: 9999;
   background: var(--navbar-bg);
+  background-color: var(--navbar-bg);
   color: var(--text);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px) saturate(118%);
+  -webkit-backdrop-filter: blur(12px) saturate(118%);
+  border-bottom: 1px solid var(--line, rgba(221, 255, 238, 0.16));
   transition: background 420ms ease, color 320ms ease, box-shadow 420ms ease, 0.32s ease-in-out;
+}
+nav.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--line, rgba(221, 255, 238, 0.16));
 }
 nav.navbar.scrolled {
   padding: 0px 0;
   background-color: var(--navbar-scrolled-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--navbar-scrolled-bg);
+  backdrop-filter: blur(12px) saturate(118%);
+  -webkit-backdrop-filter: blur(12px) saturate(118%);
   box-shadow: 0 12px 40px var(--shadow);
+}
+@supports not ((backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px))) {
+  nav.navbar,
+  nav.navbar.scrolled {
+    background-color: var(--navbar-scrolled-bg);
+    background-image: none;
+    box-shadow: 0 12px 40px var(--shadow);
+  }
 }
 nav.navbar a.navbar-brand {
     width: 9%;
