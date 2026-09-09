@@ -14,11 +14,6 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-xl-5">
-          <div class="animate__animated animate__zoomIn">
-            <img :src="headerImg" alt="An Ai rendition of Dan" />
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -26,7 +21,6 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-import headerImg from "../assets/img/header-img.webp";
 
 const loopNum = ref(0);
 const isDeleting = ref(false);

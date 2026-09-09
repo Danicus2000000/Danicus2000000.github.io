@@ -64,7 +64,7 @@
               <img :src="navIcon1" alt="LinkedIn" />
             </a>
           </div>
-          <button class="theme-toggle" type="button" :aria-label="themeLabel" @click="emit('theme-toggle')">
+          <button class="theme-toggle" type="button" :aria-label="themeLabel" :title="themeHoverText" @click="emit('theme-toggle')">
             <span class="theme-toggle__icon" aria-hidden="true">
               <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 2v3M12 19v3M4.7 4.7l2.2 2.2M17.1 17.1l2.2 2.2M2 12h3M19 12h3M4.7 19.3l2.2-2.2M17.1 6.9l2.2-2.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -94,6 +94,7 @@ const activeLink = ref("home");
 const scrolled = ref(false);
 const isMenuOpen = ref(false);
 const themeLabel = computed(() => props.theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+const themeHoverText = computed(() => `Swap to ${props.theme === "dark" ? "light" : "dark"} theme`);
 
 const setActiveLink = (value: string) => {
   activeLink.value = value;
