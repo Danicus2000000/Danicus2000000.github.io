@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-md" :class="{ scrolled, light: theme === 'light' }">
+  <nav class="navbar z-50 navbar-expand-md" :class="{ scrolled, light: theme === 'light' }">
     <div class="container">
       <a class="navbar-brand" href="/">
         <img :src="logo" alt="Logo" />
