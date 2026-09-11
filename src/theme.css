@@ -27,7 +27,7 @@
   --navbar-link-color: #eefcf7;
   --navbar-link-shadow: #121212;
   --navbar-toggle-color: #ffffff;
-  --skill-box-bg: var(--panel);
+  --skill-box-bg: transparent;
   --skill-box-text: var(--text);
   --skill-box-muted: var(--text-muted);
   --skill-box-border: var(--line);
@@ -78,7 +78,7 @@
   --navbar-link-color: #323232;
   --navbar-link-shadow: rgba(23, 119, 84, 0.18);
   --navbar-toggle-color: #323232;
-  --skill-box-bg: var(--panel);
+  --skill-box-bg: transparent;
   --skill-box-text: var(--text);
   --skill-box-muted: var(--text-muted);
   --skill-box-border: var(--line);
