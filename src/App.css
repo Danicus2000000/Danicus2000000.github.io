@@ -194,7 +194,7 @@ nav.navbar.scrolled {
   backdrop-filter: blur(28px) saturate(190%) brightness(1.08);
   box-shadow: inset 0 1px 0 var(--navbar-highlight, rgba(255, 255, 255, 0.22)), 0 12px 40px var(--navbar-shadow, var(--shadow));
 }
-@supports not ((backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px))) {
+@supports not ((backdrop-filter: blur(12px))) {
   nav.navbar,
   nav.navbar.scrolled {
     background-color: var(--navbar-scrolled-bg);
@@ -204,6 +204,7 @@ nav.navbar.scrolled {
 }
 nav.navbar a.navbar-brand {
     width: 9%;
+    user-select: none;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
@@ -213,6 +214,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   padding: 0 25px;
   font-size: 18px;
   opacity: 0.75;
+  user-select: none;
   transition: transform 280ms ease, opacity 280ms ease, color 280ms ease, text-shadow 280ms ease;
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
@@ -253,6 +255,7 @@ span.navbar-text {
     display: inline-block;
     margin-left: 14px;
     text-align: right;
+    user-select: none;
 }
 .social-icon a {
     width: 42px;
@@ -456,6 +459,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
+  user-select: none;
   box-shadow: 8px 8px 15px #717171;
 }
 .banner h1 {
@@ -508,6 +512,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
 .txt-rotate {
   border-right: 0.08em solid #666;
   text-shadow: 5px 5px 12px #121212;
+  user-select: none;
 }
 
 .txt-rotate-bounding-box{
@@ -536,7 +541,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   padding: 60px 50px;
   margin-top: -60px;
   box-shadow: 0 16px 36px var(--shadow, rgba(0, 255, 170, 0.2));
-  backdrop-filter: blur(8px);
+  backdrop-filter: none;
 }
 
 @keyframes skill-card-fly-in-from-bottom {
@@ -556,11 +561,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   background: var(--project-card, rgba(240, 255, 244, 0.06));
   color: var(--skill-box-text, var(--text));
   border: 1px solid var(--project-card-border, var(--line, rgba(221, 255, 238, 0.16)));
-  border-radius: 20px;
+  border-radius: 30px;
   box-shadow: none;
-  backdrop-filter: blur(8px);
+  backdrop-filter: none;
   user-select: none;
-  -webkit-user-select: none;
   -moz-user-select: none;
 }
 
@@ -586,6 +590,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   line-height: 1;
   padding: 0 4px;
   transition: color 260ms ease, transform 260ms ease, opacity 260ms ease;
+  user-select: none;
 }
 .skill-carousel__btn:hover:not(:disabled),
 .skill-carousel__btn:focus-visible:not(:disabled) {
@@ -632,6 +637,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   border: 1px solid var(--line, rgba(221, 255, 238, 0.16));
   overflow: hidden;
   box-shadow: inset 0 0 0 1px var(--line, rgba(221, 255, 238, 0.16));
+  user-select: none;
 }
 .project .nav.nav-pills .nav-item {
   width: 33.33333%;
@@ -693,11 +699,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
+  user-select: none;
 }
 .proj-colbx {
   overflow: hidden;
   max-height: 250px;
   margin-bottom: 24px;
+  user-select: none;
 }
 
 @media (max-width: 767.98px) {
@@ -834,6 +842,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
   .skill-carousel__item {
     flex-basis: 220px !important;
     width: 220px !important;
+    border-radius: 18px;
     min-height: 70px;
     padding: 0.75rem;
     white-space: normal;
@@ -932,6 +941,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
 .footer img {
   width: auto;
   max-height: 140px;
+  user-select: none;
 }
 .footer p {
   font-weight: 400;
