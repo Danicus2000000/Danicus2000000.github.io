@@ -17,7 +17,7 @@
     "vue": "^3.5.44"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.64.0",
+    "@cloudflare/vite-plugin": "^1.66.0",
     "@eslint/js": "^10.0.1",
     "@typescript-eslint/eslint-plugin": "^8.72.0",
     "@typescript-eslint/parser": "^8.72.1",
